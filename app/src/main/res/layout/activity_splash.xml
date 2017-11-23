@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/img_toMain"
+        android:layout_width="@dimen/dimen_120"
+        android:layout_height="@dimen/dimen_120"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_100"
+        android:src="@mipmap/appmarket_icon"/>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_15"
+        android:layout_below="@+id/img_toMain"
+        android:text="@string/txt_splash_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <Button
+        android:id="@+id/btn_toMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_48"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_40"
+        android:layout_marginEnd="@dimen/dimen_30"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:layout_marginStart="@dimen/dimen_30"
+        android:background="@drawable/btn_splash_selector"
+        android:text="@string/txt_to_main"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="@dimen/text_size_14"/>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Store</string>
+    <string name="txt_to_main">进入首页</string>
+    <string name="txt_splash_tips">一个简单的应用商店</string>
+
+    <string name="recommened">推荐</string>
+    <string name="classification">分类</string>
+    <string name="rankings">排行</string>
+    <string name="management">管理</string>
+    <string name="mine">我的</string>
+    <string name="txt_empty_data">没有数据，点击重新加载</string>
+    <string name="txt_laod_error">加载出错，点击重新加载</string>
+    <string name="txt_net_error">网路错误，点击重新加载</string>
+    <string name="txt_net_exception">网络错误</string>
+    <string name="txt_parse_exception">解析错误</string>
+    <string name="txt_unkown_exception">未知异常</string>
+</resources>
