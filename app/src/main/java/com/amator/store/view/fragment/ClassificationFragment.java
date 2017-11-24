@@ -1,17 +1,15 @@
-package com.amator.store.fragment;
+package com.amator.store.view.fragment;
 
 import com.amator.store.R;
 import com.amator.store.base.BaseFragment;
-import com.amator.store.presenter.BasePresenter;
+import com.amator.store.presenter.BaseFragmentPresenter;
 
 /**
  * Created by AmatorLee on 2017/11/23.
- * 推荐Fragment
+ * 分类Fragment
  */
 
-public class RecommendFragment extends BaseFragment{
-
-
+public class ClassificationFragment extends BaseFragment{
     @Override
     public void initData() {
 
@@ -28,17 +26,17 @@ public class RecommendFragment extends BaseFragment{
     }
 
     @Override
-    protected BasePresenter initPresenter() {
+    protected BaseFragmentPresenter initPresenter() {
         return null;
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_recomment;
+        return R.layout.fragment_classification;
     }
 
     @Override
     public void showError(String message) {
-        showToast(message);
+
     }
 }

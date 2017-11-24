@@ -15,4 +15,9 @@ public interface Constants {
     int PARSE_EX = 1002;/**解析错误等*/
     int UNKONWN_EX = 1004;/**未知错误*/
     int SERVER_EX = 1005;/**服务器错误*/
+
+    /***
+     * BaseUrl
+     */
+     String baseUrl = "http://112.124.22.238:8081/appstore/";
 }

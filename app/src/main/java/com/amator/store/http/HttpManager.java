@@ -2,7 +2,6 @@ package com.amator.store.http;
 
 import com.amator.store.StoreApplication;
 import com.amator.store.base.Constants;
-import com.amator.store.model.BaseEntity;
 import com.amator.store.util.NetUtil;
 
 import java.io.File;
@@ -36,6 +35,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HttpManager {
     private static volatile HttpManager mInstance;
     private  HttpService mRetrofitService;
+    private Retrofit mRetrofit;
     private static int mCacheSize = 50 * 1024 * 1024;
     private static File mCacheFile = new File(StoreApplication.getAppComponent().getApplicationContext().getCacheDir(), "storeCache");
     private static Cache cache = new Cache(mCacheFile,mCacheSize);
@@ -72,13 +72,17 @@ public class HttpManager {
                 .cache(cache)
                 .addInterceptor(mCacheInterceptor)
                 .build();
-        mRetrofitService = new Retrofit.Builder()
+        mRetrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(Constants.BASE_URL)
                 .client(client)
-                .build()
-        .create(HttpService.class);
+                .build();
+    }
+
+    public HttpService getRetrofitService(){
+        mRetrofitService = mRetrofit.create(HttpService.class);
+        return mRetrofitService;
     }
 
     public static HttpManager getInstance() {
@@ -102,7 +106,9 @@ public class HttpManager {
        return new ObservableTransformer<T, T>() {
            @Override
            public ObservableSource<T> apply(@NonNull Observable<T> upstream) {
-               return upstream.subscribeOn(Schedulers.io())
+               return upstream
+                       .subscribeOn(Schedulers.io())
+                       .unsubscribeOn(Schedulers.io())
                        .observeOn(AndroidSchedulers.mainThread());
            }
        };

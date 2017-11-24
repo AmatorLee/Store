@@ -16,11 +16,14 @@ import com.amator.store.StoreApplication;
 import com.amator.store.dagger.component.ActivityComponent;
 import com.amator.store.dagger.component.DaggerActivityComponent;
 import com.amator.store.dagger.module.ActivityModule;
+import com.amator.store.presenter.BaseActivityPresenter;
 import com.amator.store.presenter.BasePresenter;
 import com.amator.store.util.ActivityManager;
 import com.amator.store.util.StatusTextUtil;
 import com.amator.store.view.BaseView;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.trello.rxlifecycle2.components.RxActivity;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -29,7 +32,7 @@ import butterknife.Unbinder;
  * Created by AmatorLee on 2017/11/23.
  */
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements IBaseListener,BaseView{
+public abstract class BaseActivity<T extends BaseActivityPresenter> extends RxAppCompatActivity implements IBaseListener,BaseView{
 
     private Unbinder mUnbinder;
     protected ActivityComponent mActivityComponent;
@@ -48,7 +51,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         mUnbinder = ButterKnife.bind(this);
         initActivityComponent();
         mPresenter = initPresenter();
-        mPresenter.attach(this);
+        if (mPresenter!= null){
+            mPresenter.attach(this,this);
+        }
         initData();
         initListener();
         initEvent();

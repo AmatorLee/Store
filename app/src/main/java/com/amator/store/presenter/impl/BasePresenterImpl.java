@@ -1,5 +1,6 @@
-package com.amator.store.presenter;
+package com.amator.store.presenter.impl;
 
+import com.amator.store.presenter.BasePresenter;
 import com.amator.store.view.BaseView;
 
 /**
@@ -8,7 +9,7 @@ import com.amator.store.view.BaseView;
 
 public class BasePresenterImpl<T extends BaseView> implements BasePresenter<T> {
 
-    private T mView;
+    protected T mView;
 
     @Override
     public void attach(T baseView) {

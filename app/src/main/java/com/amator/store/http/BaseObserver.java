@@ -20,11 +20,11 @@ import retrofit2.HttpException;
  * Created by AmatorLee on 2017/11/23.
  */
 
-public class CustomObserver<T> implements Observer<T> {
+public class BaseObserver<T> implements Observer<T> {
 
     private  HttpCallBack callBack;
 
-    public CustomObserver(HttpCallBack callBack){
+    public BaseObserver(HttpCallBack<T> callBack){
         this.callBack = callBack;
     }
 

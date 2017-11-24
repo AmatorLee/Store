@@ -11,4 +11,12 @@
     <dimen name="dimen_2">2dp</dimen>
     <dimen name="dimen_4">4dp</dimen>
     <dimen name="dimen_10">10dp</dimen>
+
+    <!-- SmartPullableLayout -->
+    <dimen name="smart_ui_pullable_padding">20dp</dimen>
+    <dimen name="smart_ui_pullable_item_size">20dp</dimen>
+    <dimen name="smart_ui_pullable_item_margin">10dp</dimen>
+    <dimen name="smart_ui_effective_pull_range">65dp</dimen>
+    <dimen name="smart_ui_ignorable_pull_range">5dp</dimen>
+    <dimen name="dimen_5">5dp</dimen>
 </resources>

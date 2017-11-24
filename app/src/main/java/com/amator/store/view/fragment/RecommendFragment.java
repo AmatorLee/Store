@@ -1,15 +1,19 @@
-package com.amator.store.fragment;
+package com.amator.store.view.fragment;
 
 import com.amator.store.R;
 import com.amator.store.base.BaseFragment;
-import com.amator.store.presenter.BasePresenter;
+import com.amator.store.presenter.BaseFragmentPresenter;
 
 /**
  * Created by AmatorLee on 2017/11/23.
- * 排行Fragment
+ * 推荐Fragment
  */
 
-public class RankingFragment extends BaseFragment{
+public class RecommendFragment extends BaseFragment{
+
+
+
+
     @Override
     public void initData() {
 
@@ -26,17 +30,18 @@ public class RankingFragment extends BaseFragment{
     }
 
     @Override
-    protected BasePresenter initPresenter() {
+    protected BaseFragmentPresenter initPresenter() {
+        mFragmentComponent.inject(this);
         return null;
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_ranking;
+        return R.layout.fragment_recomment;
     }
 
     @Override
     public void showError(String message) {
-
+        showToast(message);
     }
 }

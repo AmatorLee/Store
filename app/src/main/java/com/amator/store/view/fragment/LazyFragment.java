@@ -1,26 +1,14 @@
-package com.amator.store.fragment;
-
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package com.amator.store.view.fragment;
 
 import com.amator.store.base.BaseFragment;
-import com.amator.store.base.IBaseListener;
-import com.amator.store.presenter.BasePresenter;
-import com.amator.store.view.BaseView;
-
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import com.amator.store.presenter.BaseFragmentPresenter;
 
 /**
  * Created by AmatorLee on 2017/11/23.
  * 懒加载Fragment
  */
 
-public abstract class LazyFragment<T extends BasePresenter> extends BaseFragment<T>{
+public abstract class LazyFragment<T extends BaseFragmentPresenter> extends BaseFragment<T>{
 
     private boolean hasLoad = false;
 

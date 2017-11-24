@@ -7,10 +7,10 @@ import com.amator.store.base.Constants;
 import com.amator.store.dagger.module.FragmentModule;
 import com.amator.store.dagger.scope.ContextLife;
 import com.amator.store.dagger.scope.PerFragment;
-import com.amator.store.fragment.ClassificationFragment;
-import com.amator.store.fragment.MineFragment;
-import com.amator.store.fragment.RankingFragment;
-import com.amator.store.fragment.RecommendFragment;
+import com.amator.store.view.fragment.ClassificationFragment;
+import com.amator.store.view.fragment.MineFragment;
+import com.amator.store.view.fragment.RankingFragment;
+import com.amator.store.view.fragment.RecommendFragment;
 
 import dagger.Component;
 

@@ -3,7 +3,7 @@ package com.amator.store.dagger.component;
 import android.app.Activity;
 import android.content.Context;
 
-import com.amator.store.MainActivity;
+import com.amator.store.view.activity.MainActivity;
 import com.amator.store.base.Constants;
 import com.amator.store.dagger.module.ActivityModule;
 import com.amator.store.dagger.scope.ContextLife;

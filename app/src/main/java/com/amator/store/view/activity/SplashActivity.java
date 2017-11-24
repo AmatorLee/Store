@@ -1,4 +1,4 @@
-package com.amator.store;
+package com.amator.store.view.activity;
 
 import android.content.Intent;
 import android.view.animation.Animation;
@@ -6,10 +6,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.amator.store.R;
 import com.amator.store.base.BaseActivity;
+import com.amator.store.presenter.BaseActivityPresenter;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -68,5 +69,15 @@ public class SplashActivity extends BaseActivity{
     @Override
     protected int getLayoutId() {
         return R.layout.activity_splash;
+    }
+
+    @Override
+    protected BaseActivityPresenter initPresenter() {
+        return null;
+    }
+
+    @Override
+    public void showError(String message) {
+        showToast(message);
     }
 }
